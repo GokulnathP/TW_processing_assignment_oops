@@ -9,6 +9,8 @@ public class MainProcessing extends PApplet {
     public static final int WIDTH = 620;
     public static final int HEIGHT = 480;
     public static final int DIAMETER = 50;
+
+    public static final int BALL_COUNT = 4;
     public static final int PARTITION_SIZE = 5;
 
     public final List<Ball> balls = new ArrayList<>();
@@ -25,7 +27,7 @@ public class MainProcessing extends PApplet {
 
     @Override
     public void setup() {
-        for (int ballNumber = 1; ballNumber <= 4 ; ballNumber++) {
+        for (int ballNumber = 1; ballNumber <= BALL_COUNT; ballNumber++) {
             Ball ball = buildBall(ballNumber);
             balls.add(ball);
         }
@@ -41,12 +43,7 @@ public class MainProcessing extends PApplet {
     @Override
     public void draw() {
         for (Ball ball : balls) {
-            drawBall(ball);
+            ball.draw(this);
         }
-    }
-
-    private void drawBall(Ball ball) {
-        ellipse(ball.getxPosition(), ball.getyPosition(), ball.getDIAMETER(), ball.getDIAMETER());
-        ball.setxPosition();
     }
 }
