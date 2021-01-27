@@ -13,12 +13,11 @@ public class Ball {
         this.diameter = diameter;
     }
 
-    private void moveBall() {
+    public void move() {
         xPosition += speed;
     }
 
     public void draw(MainProcessing sketch) {
         sketch.ellipse(xPosition, yPosition, diameter, diameter);
-        moveBall();
     }
 }

@@ -36,14 +36,14 @@ public class MainProcessing extends PApplet {
     private Ball buildBall(int ballNumber) {
         int initialXAxisPosition = 0;
         int initialYAxisPosition = (ballNumber * HEIGHT) / PARTITION_SIZE;
-        Ball ball = new Ball(ballNumber, initialXAxisPosition, initialYAxisPosition, DIAMETER);
-        return ball;
+        return new Ball(ballNumber, initialXAxisPosition, initialYAxisPosition, DIAMETER);
     }
 
     @Override
     public void draw() {
         for (Ball ball : balls) {
             ball.draw(this);
+            ball.move();
         }
     }
 }
